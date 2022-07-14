@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: lb-argocd-server-service
+  namespace: ingress-nginx
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/instance: ingress-nginx
+  ports:
+  # Default port used by the image
+  - port: 443
